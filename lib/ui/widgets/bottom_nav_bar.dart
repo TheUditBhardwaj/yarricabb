@@ -72,7 +72,7 @@ class BottomNavBar extends StatelessWidget {
           imagePath,
           width: isTablet ? 28 : 24,
           height: isTablet ? 28 : 24,
-          color: isSelected ? Colors.black : Colors.white, 
+          color: isSelected ? Colors.black : Colors.white,
         ),
         SizedBox(height: isTablet ? 6 : 4),
         Text(
