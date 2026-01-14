@@ -13,13 +13,13 @@ class LocationService {
     }
 
     try {
-      print('🔍 Searching for: $query');
+      print(' Searching for: $query');
 
       final uri = Uri.parse(
         '$_baseUrl/search?q=$query&format=json&limit=10&addressdetails=1&countrycodes=in',
       );
 
-      print('📡 API URL: $uri');
+      print('API URL: $uri');
 
       final response = await http.get(
         uri,
@@ -30,12 +30,12 @@ class LocationService {
       ).timeout(
         const Duration(seconds: 10),
         onTimeout: () {
-          print('⏰ Request timeout');
+          print('Request timeout');
           throw TimeoutException('Request timeout');
         },
       );
 
-      print('📥 Response status: ${response.statusCode}');
+      print('Response status: ${response.statusCode}');
 
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
